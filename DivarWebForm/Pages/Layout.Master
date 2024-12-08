@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout.master.cs" Inherits="DivarWebForm.Pages.Layout" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <title>فروشگاه وسایل دسته دوم</title>
+
+<link href="../Content/Site.css" rel="stylesheet" />
+<link href="../Content/Layout.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <header>
+        <h1>اگهی‌ها</h1>
+        <nav>
+            <ul>
+                <li class="dropdown"><a href="#">ارتباط با ما</a></li>
+                <li class="dropdown"><a href="#">خانه</a></li>
+                <li><a href="#">ورود به حساب</a></li>
+                <li class="dropdown"><a href="#">دسته‌بندی</a></li>
+                <li><a href="#">ثبت اگهی</a></li>
+            </ul>
+        </nav>
+    </header>
+    <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>

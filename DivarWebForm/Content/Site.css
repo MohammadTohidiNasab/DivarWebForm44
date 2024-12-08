@@ -33,24 +33,25 @@
     background: white;
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 30px; /* افزایش padding */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* افزایش سایه */
     text-align: center;
+    margin: 10px; /* افزودن margin بین باکس‌ها */
 }
 
 h3 {
-    font-size: 1.25rem;
-    margin: 0 0 10px;
+    font-size: 1.5rem; /* افزایش اندازه فونت عنوان */
+    margin: 0 0 15px; /* افزایش حاشیه پایین */
 }
 
 p {
-    margin: 0 0 10px;
+    margin: 0 0 15px; /* افزایش حاشیه پایین */
 }
 
 @media (max-width: 768px) {
     .col-md-4 {
-        flex: 0 0 50%;
-        max-width: 50%;
+        flex: 0 0 60%; /* افزایش عرض باکس به 60% */
+        max-width: 60%;
     }
 }
 

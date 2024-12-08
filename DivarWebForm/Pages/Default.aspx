@@ -1,29 +1,24 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="DivarWebForm.Pages.Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Layout.master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="DivarWebForm.Pages.Default" %>
 
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>آگهی‌ها</title>
-    <link href="~/Content/site.css" rel="stylesheet" />
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div class="container">
-            <h2>آگهی‌ها</h2>
-            <div class="row">
-                <asp:Repeater ID="AdsRepeater" runat="server">
-                    <ItemTemplate>
-                        <div class="col-12 mb-4">
-                            <div class="ad-item article">
-                                <h3><a href='Details.aspx?id=<%# Eval("Id") %>'><%# Eval("Title") %></a></h3>
-                                <p>قیمت: <%# Eval("Price") %> تومان</p>
-                                <p>دسته‌بندی: <%# Eval("Category") %></p>
-                            </div>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <title>صفحه اصلی</title>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="container">
+        <h2>آگهی‌ها</h2>
+        <div class="row">
+            <asp:Repeater ID="AdsRepeater" runat="server">
+                <ItemTemplate>
+                    <div class="col-md-4 mb-4"> <!-- تغییر از col-12 به col-md-4 -->
+                        <div class="ad-item article">
+                            <h3><a href='Details.aspx?id=<%# Eval("Id") %>'><%# Eval("Title") %></a></h3>
+                            <p>قیمت: <%# Eval("Price") %> تومان</p>
+                            <p>دسته‌بندی: <%# Eval("Category") %></p>
                         </div>
-                    </ItemTemplate>
-                </asp:Repeater>
-            </div>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
-    </form>
-</body>
-</html>
+    </div>
+</asp:Content>
