@@ -10,11 +10,12 @@
         <div class="row">
             <asp:Repeater ID="AdsRepeater" runat="server">
                 <ItemTemplate>
-                    <div class="col-md-4 mb-4"> <!-- تغییر از col-12 به col-md-4 -->
+                    <div class="col-md-4 mb-4">
                         <div class="ad-item article">
                             <h3><a href='Details.aspx?id=<%# Eval("Id") %>'><%# Eval("Title") %></a></h3>
                             <p>قیمت: <%# Eval("Price") %> تومان</p>
                             <p>دسته‌بندی: <%# Eval("Category") %></p>
+                            <asp:Image ID="AdImage" runat="server" ImageUrl='<%# Eval("ImageUrl") %>' CssClass="img-fluid" />
                         </div>
                     </div>
                 </ItemTemplate>

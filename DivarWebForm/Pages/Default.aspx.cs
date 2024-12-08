@@ -21,7 +21,7 @@ namespace DivarWebForm.Pages
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT Id, Title, Content, Price, CreatedDate, Category FROM Advertisements";
+                string query = "SELECT Id, Title, Content, Price, Category, ImageUrl FROM Advertisements";
                 SqlCommand command = new SqlCommand(query, connection);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 DataTable dataTable = new DataTable();
