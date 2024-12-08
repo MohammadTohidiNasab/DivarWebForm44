@@ -13,6 +13,8 @@
 .row {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center; /* وسط‌چینی باکس‌ها */
+    align-items: flex-start; /* یا می‌توانید از flex-start استفاده کنید */
 }
 
 .col-12 {
@@ -37,6 +39,8 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* افزایش سایه */
     text-align: center;
     margin: 10px; /* افزودن margin بین باکس‌ها */
+    min-height: 250px; /* اضافه کردن حداقل ارتفاع */
+    min-width: 250px; /* اضافه کردن حداقل ارتفاع */
 }
 
 h3 {
@@ -50,14 +54,14 @@ p {
 
 @media (max-width: 768px) {
     .col-md-4 {
-        flex: 0 0 60%; /* افزایش عرض باکس به 60% */
-        max-width: 60%;
+        flex: 0 0 50%; /* افزایش عرض باکس به 50% */
+        max-width: 50%;
     }
 }
 
 @media (max-width: 480px) {
     .col-md-4 {
-        flex: 0 0 100%;
+        flex: 0 0 100%; /* برای صفحه‌های کوچک، هر باکس 100% عرض بگیرد */
         max-width: 100%;
     }
 }
