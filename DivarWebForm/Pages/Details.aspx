@@ -14,7 +14,7 @@
                 <h3><asp:Literal ID="TitleLiteral" runat="server"></asp:Literal></h3>
                 <p><asp:Literal ID="ContentLiteral" runat="server"></asp:Literal></p>
                 <p>قیمت: <asp:Literal ID="PriceLiteral" runat="server"></asp:Literal> تومان</p>
-                <p>دسته بندی: <asp:Literal ID="CategoryLiteral" runat="server"></asp:Literal></p>
+                <p>دسته‌بندی: <asp:Literal ID="CategoryLiteral" runat="server"></asp:Literal></p>
                 <p>تاریخ ایجاد: <asp:Literal ID="CreatedDateLiteral" runat="server"></asp:Literal></p>
             </div>
         </div>

@@ -20,6 +20,7 @@ namespace DivarWebForm.Pages
             string connectionString = ConfigurationManager.ConnectionStrings["DivarConnection"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
+                connection.Open();
                 string query = "SELECT Id, Title, Content, Price, CreatedDate, Category FROM Advertisements";
                 SqlCommand command = new SqlCommand(query, connection);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
