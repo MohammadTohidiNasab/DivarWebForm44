@@ -76,24 +76,6 @@ namespace DivarWebForm.Pages {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator PriceRequired;
         
         /// <summary>
-        /// Category control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Category;
-        
-        /// <summary>
-        /// CategoryRequired control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator CategoryRequired;
-        
-        /// <summary>
         /// SubmitButton control.
         /// </summary>
         /// <remarks>

@@ -25,17 +25,14 @@
                 <label for="Price">قیمت:</label>
                 <asp:TextBox ID="Price" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="PriceRequired" runat="server" ControlToValidate="Price" ErrorMessage="افزودن قیمت محصول الزامی است" />
+                <asp:RegularExpressionValidator ID="PriceValidator" runat="server" ControlToValidate="Price" 
+                                                ErrorMessage="قیمت باید یک عدد باشد" 
+                                                ValidationExpression="^\d+$" />
             </div>
 
             <div>
-                <label for="Category">دسته‌بندی:</label>
-                <asp:DropDownList ID="Category" runat="server">
-                    <asp:ListItem Text="کتاب" Value="0"></asp:ListItem>
-                    <asp:ListItem Text="خانه" Value="1"></asp:ListItem>
-                    <asp:ListItem Text="موبایل" Value="2"></asp:ListItem>
-                    <asp:ListItem Text="ماشین" Value="3"></asp:ListItem>
-                </asp:DropDownList>
-                <asp:RequiredFieldValidator ID="CategoryRequired" runat="server" ControlToValidate="Category" InitialValue="" ErrorMessage="افزودن دسته بندی محصول الزامی است" />
+                <label for="SelectedCategory">دسته‌بندی انتخاب شده:</label>
+                <asp:Label ID="SelectedCategoryLabel" runat="server" Text="دسته‌بندی"></asp:Label>
             </div>
 
             <div>

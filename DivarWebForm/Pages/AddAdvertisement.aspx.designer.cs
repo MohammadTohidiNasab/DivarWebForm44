@@ -76,22 +76,22 @@ namespace DivarWebForm.Pages {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator PriceRequired;
         
         /// <summary>
-        /// Category control.
+        /// PriceValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Category;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator PriceValidator;
         
         /// <summary>
-        /// CategoryRequired control.
+        /// SelectedCategoryLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator CategoryRequired;
+        protected global::System.Web.UI.WebControls.Label SelectedCategoryLabel;
         
         /// <summary>
         /// Image1 control.

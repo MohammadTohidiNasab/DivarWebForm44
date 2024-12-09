@@ -2,8 +2,7 @@
 using System.Configuration;
 using System.Data.SqlClient;
 using System.IO;
-using System.Web.UI.WebControls; // اضافه کردن فضای نام مناسب
-using DivarWebForm.Models;
+using System.Web.UI.WebControls;
 
 namespace DivarWebForm.Pages
 {
@@ -13,7 +12,18 @@ namespace DivarWebForm.Pages
         {
             if (!IsPostBack)
             {
-                // هر گونه تنظیم اولیه
+                // دریافت دسته‌بندی انتخاب شده از سشن
+                string selectedCategory = Session["SelectedCategory"] as string;
+                if (string.IsNullOrEmpty(selectedCategory))
+                {
+                    // اگر دسته‌بندی انتخاب نشده، کاربر به صفحه انتخاب دسته‌بندی هدایت شود
+                    Response.Redirect("SelectCategory.aspx");
+                }
+                else
+                {
+                    // نمایش دسته‌بندی انتخاب شده
+                    SelectedCategoryLabel.Text = selectedCategory;
+                }
             }
         }
 
@@ -24,7 +34,9 @@ namespace DivarWebForm.Pages
                 string title = Title.Text;
                 string content = Content.Text;
                 int price = int.Parse(Price.Text);
-                CategoryType category = (CategoryType)Enum.Parse(typeof(CategoryType), Category.SelectedValue);
+                // از سشن برای دریافت دسته‌بندی استفاده می‌کنیم
+                string selectedCategory = Session["SelectedCategory"] as string;
+                CategoryType category = (CategoryType)Enum.Parse(typeof(CategoryType), selectedCategory);
 
                 // مسیر محلی برای ذخیره تصاویر
                 string uploadPath = Server.MapPath("~/Files/Uploads/");
@@ -80,5 +92,13 @@ namespace DivarWebForm.Pages
                 }
             }
         }
+    }
+
+    public enum CategoryType
+    {
+        کتاب = 1,   // فرض کنید Id در پایگاه داده 1 است
+        خانه = 2,   // فرض کنید Id در پایگاه داده 2 است
+        موبایل = 3, // فرض کنید Id در پایگاه داده 3 است
+        ماشین = 4  // فرض کنید Id در پایگاه داده 4 است
     }
 }
