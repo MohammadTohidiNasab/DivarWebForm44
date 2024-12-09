@@ -15,10 +15,10 @@
         <nav>
             <ul>
                 <li class="dropdown"><a href="#">ارتباط با ما</a></li>
-                <li class="dropdown"><a href="#">خانه</a></li>
+                <li class="dropdown"><a href="Default.aspx">خانه</a></li>
                 <li><a href="#">ورود به حساب</a></li>
                 <li class="dropdown"><a href="#">دسته‌بندی</a></li>
-                <li><a href="#">ثبت اگهی</a></li>
+                <li><a href="AddAdvertisement.aspx">ثبت اگهی</a></li>
             </ul>
         </nav>
     </header>

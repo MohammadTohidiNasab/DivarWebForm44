@@ -1,0 +1,88 @@
+﻿body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.article {
+    max-width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.article-image {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.article-title {
+    font-size: 24px;
+    margin: 20px 0 10px;
+    color: #333;
+}
+
+.article-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+.btn-delete {
+    background-color: red;
+}
+
+    .btn-delete:hover {
+        background-color: darkred;
+    }
+
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    filter: invert(1);
+}

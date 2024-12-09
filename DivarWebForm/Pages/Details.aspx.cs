@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Web.UI.WebControls;
 
 namespace DivarWebForm.Pages
 {
@@ -22,7 +23,7 @@ namespace DivarWebForm.Pages
                 string connectionString = ConfigurationManager.ConnectionStrings["DivarConnection"].ConnectionString;
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT Title, Content, Price, CreatedDate, Category FROM Advertisements WHERE Id = @Id";
+                    string query = "SELECT Title, Content, Price, CreatedDate, Category, ImageUrl, ImageUrl2, ImageUrl3 FROM Advertisements WHERE Id = @Id";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Id", id);
                     connection.Open();
@@ -34,9 +35,37 @@ namespace DivarWebForm.Pages
                         PriceLiteral.Text = reader["Price"].ToString();
                         CategoryLiteral.Text = reader["Category"].ToString();
                         CreatedDateLiteral.Text = reader["CreatedDate"].ToString();
+
+                        // اضافه کردن تصاویر به اسلایدر
+                        AddImageToCarousel(reader["ImageUrl"].ToString(), true);
+                        AddImageToCarousel(reader["ImageUrl2"].ToString(), false);
+                        AddImageToCarousel(reader["ImageUrl3"].ToString(), false);
                     }
                 }
             }
+        }
+
+        private void AddImageToCarousel(string imageUrl, bool isActive)
+        {
+            if (!string.IsNullOrEmpty(imageUrl))
+            {
+                var imageHtml = $@"
+                    <div class='carousel-item{(isActive ? " active" : string.Empty)}'>
+                        <img src='{imageUrl}' class='d-block w-100 article-image' alt='{imageUrl}' loading='lazy'>
+                    </div>";
+
+                ImageCarouselPlaceholder.Controls.Add(new Literal { Text = imageHtml });
+            }
+        }
+
+        protected void EditButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EditAdvertisement.aspx?id=" + Request.QueryString["id"]);
+        }
+
+        protected void DeleteButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DeleteAdvertisement.aspx?id=" + Request.QueryString["id"]);
         }
     }
 }

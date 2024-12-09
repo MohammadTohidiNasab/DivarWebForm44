@@ -183,6 +183,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Content.css" />
+    <Content Include="Content\Detail.css" />
     <Content Include="Content\Layout.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
@@ -198,6 +199,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Pages\AddAdvertisement.aspx" />
+    <Content Include="Pages\DeleteAdvertisement.aspx" />
+    <Content Include="Pages\EditAdvertisement.aspx" />
     <Content Include="Pages\Layout.Master" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Pages\Default.aspx" />
@@ -278,12 +281,26 @@
     <Compile Include="Pages\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DeleteAdvertisement.aspx.cs">
+      <DependentUpon>DeleteAdvertisement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\DeleteAdvertisement.aspx.designer.cs">
+      <DependentUpon>DeleteAdvertisement.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Details.aspx.cs">
       <DependentUpon>Details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Details.aspx.designer.cs">
       <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditAdvertisement.aspx.cs">
+      <DependentUpon>EditAdvertisement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EditAdvertisement.aspx.designer.cs">
+      <DependentUpon>EditAdvertisement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Layout.Master.cs">
       <DependentUpon>Layout.Master</DependentUpon>

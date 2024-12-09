@@ -1,11 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddAdvertisement.aspx.cs" Inherits="DivarWebForm.Pages.AddAdvertisement" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Pages/Layout.master" CodeBehind="AddAdvertisement.aspx.cs" Inherits="DivarWebForm.Pages.AddAdvertisement" %>
 
-<!DOCTYPE html>
-<html>
-<head runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>ثبت آگهی</title>
-</head>
-<body>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
         <div>
             <h2>ثبت آگهی جدید</h2>
@@ -59,5 +58,4 @@
             </div>
         </div>
     </form>
-</body>
-</html>
+</asp:Content>
