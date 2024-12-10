@@ -82,6 +82,24 @@
                 <asp:RequiredFieldValidator ID="PriceRequired" runat="server" ControlToValidate="Price" ErrorMessage="افزودن قیمت محصول الزامی است" CssClass="text-danger" />
             </div>
 
+            <!-- نمایش و تغییر تصاویر موجود -->
+            <div class="form-group">
+                <label for="CurrentImage1">تصویر فعلی ۱:</label>
+                <asp:Label ID="CurrentImage1" runat="server" Text="نام تصویر ۱"></asp:Label>
+                <asp:FileUpload ID="Image1" runat="server" CssClass="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="CurrentImage2">تصویر فعلی ۲:</label>
+                <asp:Label ID="CurrentImage2" runat="server" Text="نام تصویر ۲"></asp:Label>
+                <asp:FileUpload ID="Image2" runat="server" CssClass="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="CurrentImage3">تصویر فعلی ۳:</label>
+                <asp:Label ID="CurrentImage3" runat="server" Text="نام تصویر ۳"></asp:Label>
+                <asp:FileUpload ID="Image3" runat="server" CssClass="form-control" />
+            </div>
 
             <div class="form-group">
                 <asp:Button ID="SubmitButton" runat="server" Text="ذخیره تغییرات" OnClick="SubmitButton_Click" />
