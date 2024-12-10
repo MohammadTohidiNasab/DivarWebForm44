@@ -2,13 +2,15 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>ثبت آگهی</title>
+    <link href="../Content/AddAdvertisement.css" rel="stylesheet" />
+
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
         <div>
             <h2>ثبت آگهی جدید</h2>
-            <asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="لطفاً خطاهای زیر را بررسی کنید:" />
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="لطفاً خطاهای زیر را بررسی کنید:" CssClass="validation-summary" />
 
             <div>
                 <label for="Title">تیتر:</label>
