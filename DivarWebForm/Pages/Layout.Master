@@ -3,21 +3,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head runat="server">
+    <meta charset="UTF-8" />
     <title>فروشگاه وسایل دسته دوم</title>
-
-<link href="../Content/Site.css" rel="stylesheet" />
-<link href="../Content/Layout.css" rel="stylesheet" />
+    <link href="../Content/Site.css" rel="stylesheet" />
+    <link href="../Content/Layout.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {background-color: #f1f1f1}
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>اگهی‌ها</h1>
         <nav>
             <ul>
-                <li class="dropdown"><a href="#">ارتباط با ما</a></li>
-                <li class="dropdown"><a href="Default.aspx">خانه</a></li>
-                <li><a href="#">ورود به حساب</a></li>
-                <li class="dropdown"><a href="#">دسته‌بندی</a></li>
+                <li><a href="ContactUs.aspx">ارتباط با ما</a></li>
+                <li><a href="Default.aspx">خانه</a></li>
+                <li><a href="Login.aspx">ورود به حساب</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">دسته‌بندی</a>
+                    <div class="dropdown-content">
+                        <asp:Repeater ID="CategoryRepeater" runat="server">
+                            <ItemTemplate>
+                                <a href="Default.aspx?category=<%# Eval("Value") %>"><%# Eval("Name") %></a>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </div>
+                </li>
                 <li><a href="SelectCategory.aspx">ثبت اگهی</a></li>
             </ul>
         </nav>
