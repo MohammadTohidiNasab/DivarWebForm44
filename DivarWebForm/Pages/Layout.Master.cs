@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Linq;
+using System.Web;
 using System.Web.UI.WebControls;
-using DivarWebForm.Models; // اضافه کردن فضای نام مناسب
+using DivarWebForm.Models; // اضافه کردن فضای نام مناسب برای CategoryType
 
 namespace DivarWebForm.Pages
 {
@@ -12,6 +13,7 @@ namespace DivarWebForm.Pages
             if (!IsPostBack)
             {
                 LoadCategories();
+                SetLoginLogoutLinks();
             }
         }
 
@@ -24,6 +26,26 @@ namespace DivarWebForm.Pages
 
             CategoryRepeater.DataSource = categories;
             CategoryRepeater.DataBind();
+        }
+
+        private void SetLoginLogoutLinks()
+        {
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                // کاربر لاگین است، لینک خروج را نمایش دهید
+                LoginPlaceholder.Controls.Add(new Literal
+                {
+                    Text = "<li><a href='Logout.aspx'>خروج از حساب</a></li>"
+                });
+            }
+            else
+            {
+                // کاربر لاگین نیست، لینک ورود را نمایش دهید
+                LoginPlaceholder.Controls.Add(new Literal
+                {
+                    Text = "<li><a href='Login.aspx'>ورود به حساب</a></li>"
+                });
+            }
         }
     }
 }

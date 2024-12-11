@@ -3,6 +3,8 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.IO;
 using System.Web.UI.WebControls;
+using DivarWebForm.Models;
+using Microsoft.AspNet.Identity;
 
 namespace DivarWebForm.Pages
 {
@@ -74,8 +76,8 @@ namespace DivarWebForm.Pages
             {
                 connection.Open();
                 string query = @"
-                    INSERT INTO Advertisements (Title, Content, Price, Category, ImageUrl, ImageUrl2, ImageUrl3, CreatedDate)
-                    VALUES (@Title, @Content, @Price, @Category, @ImageUrl, @ImageUrl2, @ImageUrl3, @CreatedDate)";
+                    INSERT INTO Advertisements (Title, Content, Price, Category, ImageUrl, ImageUrl2, ImageUrl3, CreatedDate, UserId)
+                    VALUES (@Title, @Content, @Price, @Category, @ImageUrl, @ImageUrl2, @ImageUrl3, @CreatedDate, @UserId)";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -88,17 +90,13 @@ namespace DivarWebForm.Pages
                     command.Parameters.AddWithValue("@ImageUrl3", (object)imageUrl3 ?? DBNull.Value);
                     command.Parameters.AddWithValue("@CreatedDate", DateTime.Now);
 
+                    // دریافت شناسه کاربر وارد شده از سشن
+                    string userId = Session["UserId"] as string;
+                    command.Parameters.AddWithValue("@UserId", userId);
+
                     command.ExecuteNonQuery();
                 }
             }
         }
-    }
-
-    public enum CategoryType
-    {
-        کتاب = 1,   // فرض کنید Id در پایگاه داده 1 است
-        خانه = 2,   // فرض کنید Id در پایگاه داده 2 است
-        موبایل = 3, // فرض کنید Id در پایگاه داده 3 است
-        ماشین = 4  // فرض کنید Id در پایگاه داده 4 است
     }
 }

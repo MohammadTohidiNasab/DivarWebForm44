@@ -51,6 +51,16 @@
                     <asp:Literal ID="CreatedDateLiteral" runat="server"></asp:Literal>
                 </p>
 
+                <!-- اضافه کردن بخش اطلاعات تماس -->
+                <p class="text-center">
+                    نام منتشر کننده اگهی:
+                    <asp:Literal ID="FullNameLiteral" runat="server"></asp:Literal>
+                </p>
+                <p class="text-center">
+                    اطلاعات تماس:
+                    <asp:Literal ID="PhoneNumberLiteral" runat="server"></asp:Literal>
+                </p>
+
                 <!-- اضافه کردن دکمه‌ها برای ویرایش و حذف آگهی -->
                 <div class="button-group">
                     <asp:Button ID="EditButton" runat="server" Text="ویرایش آگهی" CssClass="btn btn-primary" OnClick="EditButton_Click" />

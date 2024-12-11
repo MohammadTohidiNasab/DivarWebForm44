@@ -1,0 +1,64 @@
+﻿body {
+    background-color: #f0f0f0; /* رنگ پس‌زمینه عمومی */
+    font-family: Arial, sans-serif; /* فونت عمومی */
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* تغییر به flex-start برای بالا آوردن فرم */
+    height: 100vh; /* ارتفاع کل صفحه */
+    padding-top: 50px; /* فاصله از بالای صفحه */
+}
+
+.login-form {
+    max-width: 400px;
+    width: 100%; /* عرض کامل در موبایل */
+    margin: 0 auto; /* مرکز کردن فرم */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff; /* رنگ پس‌زمینه فرم */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* سایه برای عمق بیشتر */
+}
+
+.text-center {
+    text-align: center;
+    margin-bottom: 20px; /* فاصله بیشتر بین عنوان و فرم */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    padding: 8px; /* کاهش فضای داخلی برای فیلدها */
+    border: 1px solid #ccc;
+    border-radius: 5px; /* گوشه‌های گرد */
+    width: calc(100% - 16px); /* عرض باکس‌ها را به اندازه دکمه‌ها تنظیم می‌کند */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* سایه برای فیلدها */
+    height: 40px; /* تنظیم ارتفاع فیلدها */
+}
+
+
+.btn {
+    padding: 12px; /* فضای داخلی بیشتر برای دکمه‌ها */
+    border-radius: 5px; /* گوشه‌های گرد */
+}
+
+.btn-primary {
+    background-color: #007bff; /* رنگ دکمه ورود */
+    border: none; /* حذف مرز */
+    color: white; /* رنگ متن */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* رنگ دکمه بازگشت */
+    border: none; /* حذف مرز */
+    color: white; /* رنگ متن */
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}

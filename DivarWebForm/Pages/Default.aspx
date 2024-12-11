@@ -3,10 +3,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta charset="UTF-8" />
     <title>صفحه اصلی</title>
+
+
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
+                <asp:Literal ID="WelcomeMessage" runat="server" />
+
         <h2>آگهی‌ها</h2>
         <div class="row">
             <asp:Repeater ID="AdsRepeater" runat="server">
@@ -16,7 +20,7 @@
                             <asp:Image ID="AdImage" runat="server" ImageUrl='<%# Eval("ImageUrl") %>' CssClass="img-fluid" />
                             <h3><a href='Details.aspx?id=<%# Eval("Id") %>'><%# Eval("Title") %></a></h3>
                             <p>قیمت: <%# Eval("Price") %> تومان</p>
-                            <p>دسته‌بندی: <%# HttpUtility.HtmlDecode(Eval("CategoryName").ToString()) %></p>
+                            <p>دسته‌بندی: <%# Eval("CategoryName") %></p>
                         </div>
                     </div>
                 </ItemTemplate>

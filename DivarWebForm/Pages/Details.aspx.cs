@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Web.UI.WebControls;
+using DivarWebForm.Models;
 
 namespace DivarWebForm.Pages
 {
@@ -23,7 +24,12 @@ namespace DivarWebForm.Pages
                 string connectionString = ConfigurationManager.ConnectionStrings["DivarConnection"].ConnectionString;
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT Title, Content, Price, CreatedDate, Category, ImageUrl, ImageUrl2, ImageUrl3 FROM Advertisements WHERE Id = @Id";
+                    string query = @"
+                        SELECT a.Title, a.Content, a.Price, a.CreatedDate, a.Category, a.ImageUrl, a.ImageUrl2, a.ImageUrl3, a.UserId, u.FirstName, u.LastName, u.PhoneNumber
+                        FROM Advertisements a
+                        JOIN AspNetUsers u ON a.UserId = u.Id
+                        WHERE a.Id = @Id";
+
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Id", id);
                     connection.Open();
@@ -33,8 +39,12 @@ namespace DivarWebForm.Pages
                         TitleLiteral.Text = reader["Title"].ToString();
                         ContentLiteral.Text = reader["Content"].ToString();
                         PriceLiteral.Text = reader["Price"].ToString();
-                        CategoryLiteral.Text = reader["Category"].ToString();
+                        CategoryLiteral.Text = ((CategoryType)Convert.ToInt32(reader["Category"])).ToString();
                         CreatedDateLiteral.Text = reader["CreatedDate"].ToString();
+
+                        // نمایش نام و نام خانوادگی و شماره تلفن کاربر
+                        FullNameLiteral.Text = $"{reader["FirstName"]} {reader["LastName"]}";
+                        PhoneNumberLiteral.Text = reader["PhoneNumber"].ToString();
 
                         // اضافه کردن تصاویر به اسلایدر
                         AddImageToCarousel(reader["ImageUrl"].ToString(), true);

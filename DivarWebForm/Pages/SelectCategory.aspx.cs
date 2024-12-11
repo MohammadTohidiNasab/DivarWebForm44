@@ -10,7 +10,10 @@ namespace DivarWebForm.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // کد لازم برای بارگذاری اولیه صفحه، در صورت نیاز
+            if (!User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
 
         protected void SelectCategoryButton_Click(object sender, EventArgs e)

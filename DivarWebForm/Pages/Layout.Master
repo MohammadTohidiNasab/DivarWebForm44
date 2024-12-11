@@ -38,9 +38,8 @@
         <h1>اگهی‌ها</h1>
         <nav>
             <ul>
-                <li><a href="ContactUs.aspx">ارتباط با ما</a></li>
                 <li><a href="Default.aspx">خانه</a></li>
-                <li><a href="Login.aspx">ورود به حساب</a></li>
+                <asp:PlaceHolder ID="LoginPlaceholder" runat="server"></asp:PlaceHolder>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">دسته‌بندی</a>
                     <div class="dropdown-content">
